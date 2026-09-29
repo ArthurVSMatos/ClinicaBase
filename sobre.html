@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Saiba mais sobre a trajetória, valores e estrutura da clínica.">
+    <title>Sobre Nós | Clínica Vitta</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" data-bind="clinic.name">Clínica Vitta</a>
+            <button class="menu-toggle">☰</button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="procedimentos.html" class="nav-link">Procedimentos</a></li>
+                    <li><a href="sobre.html" class="nav-link active">Sobre</a></li>
+                    <li><a href="equipe.html" class="nav-link">Equipe</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                    <li><button class="btn btn-primary trigger-booking">Agendar avaliação</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container grid-2">
+            <div>
+                <span class="section-tag">Nossa História</span>
+                <h1 class="section-title">Sobre a <span data-bind="clinic.name"></span></h1>
+                <p style="margin-bottom: 16px; color: var(--color-text-secondary);">Fundada com o propósito de unir ciência, ética e estética, nossa clínica foca em entregar procedimentos seguros que realçam os traços naturais de cada pessoa.</p>
+                <p style="margin-bottom: 24px; color: var(--color-text-secondary);">Acreditamos que o autocuidado deve ser uma experiência relaxante e revigorante. Oferecemos um ambiente exclusivo projetado para proporcionar bem-estar desde a recepção até o pós-atendimento.</p>
+                <button class="btn btn-primary trigger-booking">Agendar uma visita</button>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" alt="Instalações da clínica" style="border-radius: var(--radius-md);">
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2026 <span data-bind="clinic.name"></span>. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE AGENDAMENTO -->
+    <div id="booking-modal" class="modal-backdrop">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-step-title">Agendamento</h3>
+                <button class="modal-close" id="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-stepper"><span id="modal-step-counter">Passo 1 de 7</span></div>
+            <div class="modal-progress-bar"><div class="modal-progress-fill" id="modal-progress-fill"></div></div>
+            <div class="modal-body" id="modal-step-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="modal-prev-btn">Voltar</button>
+                <button class="btn btn-primary" id="modal-next-btn">Avançar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

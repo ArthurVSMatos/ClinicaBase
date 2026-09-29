@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confira todos os procedimentos estéticos faciais, corporais e tecnologias oferecidos.">
+    <title>Procedimentos | Clínica Vitta</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" data-bind="clinic.name">Clínica Vitta</a>
+            <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="procedimentos.html" class="nav-link active">Procedimentos</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li><a href="equipe.html" class="nav-link">Equipe</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                    <li><button class="btn btn-primary trigger-booking">Agendar avaliação</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Catálogo Completo</span>
+                <h1 class="section-title">Nossos Procedimentos</h1>
+                <p class="section-subtitle">Conheça nossos protocolos organizados por especialidade.</p>
+            </div>
+
+            <!-- CONTAINER POPULADO DINAMICAMENTE A PARTIR DAS CATEGORIAS DO CONFIG.JS -->
+            <div id="all-procedures-container"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 <span data-bind="clinic.name"></span>. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE AGENDAMENTO -->
+    <div id="booking-modal" class="modal-backdrop">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-step-title">Agendamento</h3>
+                <button class="modal-close" id="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-stepper">
+                <span id="modal-step-counter">Passo 1 de 7</span>
+            </div>
+            <div class="modal-progress-bar">
+                <div class="modal-progress-fill" id="modal-progress-fill"></div>
+            </div>
+            <div class="modal-body" id="modal-step-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="modal-prev-btn">Voltar</button>
+                <button class="btn btn-primary" id="modal-next-btn">Avançar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

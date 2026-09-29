@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato conosco e agende sua avaliação estética.">
+    <title>Contato | Clínica Vitta</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" data-bind="clinic.name">Clínica Vitta</a>
+            <button class="menu-toggle">☰</button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="procedimentos.html" class="nav-link">Procedimentos</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li><a href="equipe.html" class="nav-link">Equipe</a></li>
+                    <li><a href="contato.html" class="nav-link active">Contato</a></li>
+                    <li><button class="btn btn-primary trigger-booking">Agendar avaliação</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container grid-2">
+            <div>
+                <span class="section-tag">Fale Conosco</span>
+                <h1 class="section-title">Envie uma Mensagem</h1>
+                <p style="color: var(--color-text-secondary); margin-bottom: 24px;">Preencha os campos abaixo. Ao clicar em enviar, sua mensagem será formatada diretamente para nosso WhatsApp.</p>
+                
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label class="form-label" for="contact-name">Seu Nome *</label>
+                        <input type="text" id="contact-name" class="form-control" required placeholder="Digite seu nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contact-phone">Seu Telefone / WhatsApp *</label>
+                        <input type="tel" id="contact-phone" class="form-control" required placeholder="(61) 99999-9999">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contact-message">Mensagem</label>
+                        <textarea id="contact-message" class="form-control" placeholder="Como podemos te ajudar?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar via WhatsApp</button>
+                </form>
+            </div>
+
+            <div style="background: var(--color-white); padding: 32px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h3 style="margin-bottom: 20px;">Informações de Contato</h3>
+                <p style="margin-bottom: 12px;"><strong>Telefone / WhatsApp:</strong> <span data-bind="clinic.phone"></span></p>
+                <p style="margin-bottom: 12px;"><strong>Instagram:</strong> <span data-bind="clinic.instagramHandle"></span></p>
+                <p style="margin-bottom: 20px;"><strong>Endereço:</strong> <span data-bind="clinic.address"></span></p>
+                
+                <h4 style="margin-bottom: 8px;">Horários de Funcionamento:</h4>
+                <p style="color: var(--color-text-secondary);" data-bind="clinic.hours.weekdays"></p>
+                <p style="color: var(--color-text-secondary);" data-bind="clinic.hours.saturday"></p>
+                <p style="color: var(--color-text-secondary); margin-bottom: 24px;" data-bind="clinic.hours.sunday"></p>
+                
+                <a data-bind="clinic.maps" target="_blank" class="btn btn-secondary btn-block">Abrir no Google Maps</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2026 <span data-bind="clinic.name"></span>. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE AGENDAMENTO -->
+    <div id="booking-modal" class="modal-backdrop">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-step-title">Agendamento</h3>
+                <button class="modal-close" id="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-stepper"><span id="modal-step-counter">Passo 1 de 7</span></div>
+            <div class="modal-progress-bar"><div class="modal-progress-fill" id="modal-progress-fill"></div></div>
+            <div class="modal-body" id="modal-step-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="modal-prev-btn">Voltar</button>
+                <button class="btn btn-primary" id="modal-next-btn">Avançar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
